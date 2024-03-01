@@ -14,7 +14,7 @@ const About = () => {
         <p className="text-black hover:animate-ping">About us</p>
       </div>
 
-      <div className="section1 flex flex-col lg:flex-row bg-[url('https://wallpapercave.com/wp/wp2562877.jpg')] bg-cover bg-white w-[99vw] h-fit lg:h-[70vh] items-center space-y-5">
+      <div className="section1 flex flex-col lg:flex-row bg-[url('https://wallpapercave.com/wp/wp2562877.jpg')] bg-cover bg-white w-[100vw] h-fit lg:h-[90vh] items-center space-y-5">
         <div className="self-center w-fit text-white p-20 space-y-3">
           <p className="description text-lg">
             Welcome to Memories, a dynamic platform designed to capture and
@@ -47,24 +47,24 @@ const About = () => {
         </div>
       </div>
       <div className="flex flex-col"></div>
-      <div className="images flex flex-col lg:flex-row w-[99vw] h-full">
-        <div className="bg-[url('https://assets.vogue.com/photos/58916276b482c0ea0e4d7ea4/master/pass/00-polaroids.jpg')] bg-no-repeat h-[45vh] w-[99vw] bg-cover text-white">
-          <p className="text-5xl flex justify-center items-center h-full">
+      <div className="images flex flex-col lg:flex-row w-[100vw] h-full">
+        <div className="bg-[url('https://assets.vogue.com/photos/58916276b482c0ea0e4d7ea4/master/pass/00-polaroids.jpg')] bg-no-repeat h-[45vh] w-[100vw] bg-cover text-white">
+          <p className="text-4xl flex justify-center items-center h-full">
             Store your pretty Memories
           </p>
         </div>
-        <div className="bg-[url('https://marketplace.canva.com/EAFGTPGm0so/1/0/900w/canva-gray-minimalistic-photo-collage-polaroid-instagram-story-dCAsQ_H2s8Q.jpg')] bg-no-repeat h-[45vh] w-[99vw] bg-cover">
-          <p className="text-5xl flex justify-center items-center h-full text-white">
+        <div className="bg-[url('https://marketplace.canva.com/EAFGTPGm0so/1/0/900w/canva-gray-minimalistic-photo-collage-polaroid-instagram-story-dCAsQ_H2s8Q.jpg')] bg-no-repeat h-[45vh] w-[100vw] bg-cover">
+          <p className="text-4xl flex justify-center items-center h-full text-white">
             See and Like Other's Memories
           </p>
         </div>
-        <div className="bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh2-wR4qSLP0KvTfBFI2s0E9VhKdrZLc0uVA&usqp=CAU')] bg-no-repeat h-[45vh] w-[99vw] bg-cover">
-          <p className="text-5xl flex justify-center items-center h-full text-white">
+        <div className="bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh2-wR4qSLP0KvTfBFI2s0E9VhKdrZLc0uVA&usqp=CAU')] bg-no-repeat h-[45vh] w-[100vw] bg-cover">
+          <p className="text-4xl flex justify-center items-center h-full text-white">
             Comment on Other's Memories
           </p>
         </div>
-        <div className="bg-[url('https://e0.pxfuel.com/wallpapers/706/61/desktop-wallpaper-p-o-l-a-r-o-i-d-polaroid.jpg')] bg-no-repeat h-[45vh] w-[99vw] bg-cover">
-          <p className="text-5xl flex justify-center items-center h-full text-white">
+        <div className="bg-[url('https://e0.pxfuel.com/wallpapers/706/61/desktop-wallpaper-p-o-l-a-r-o-i-d-polaroid.jpg')] bg-no-repeat h-[45vh] w-[100vw] bg-cover">
+          <p className="text-4xl flex justify-center items-center h-full text-white">
             Make Memories According to Mood
           </p>
         </div>

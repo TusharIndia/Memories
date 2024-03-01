@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import postContext from "./postContext";
 
 const PostState1 = (props) => {
-  const host = "http://localhost:5000";
+  const host = "https://memories-api-one.vercel.app";
   const s1 = [];
   const s2 = [];
   let authToken = ""

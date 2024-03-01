@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <div>
           <div>
-      <footer className="bg-[#F2F2F2] text-black px-52 py-10">
-        <div className="m-4">
+      <footer className="bg-[#F2F2F2] text-black px-12 lg:px-52 py-10">
+        <div className="m-4 ">
           <div className="flex flex-row justify-between m-4 flex-wrap">
             <div className="flex flex-col space-y-3 mt-5">
               <h6 className="font-semibold">About</h6>
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
           <hr />
         </div>
-        <div className="container">
+        <div className="">
           <p className="copyright-text text-center">
             Copyright &copy; 2024 All Rights Reserved by
             <Link to="#">Memories</Link>.
