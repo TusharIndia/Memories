@@ -7,7 +7,13 @@ connectToMongo();
 const app = express();
 const port = process.env.PORT;
 
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://memories-seven-livid.vercel.app/"],
+        methods: ["POST","GET"],
+        credentials: true
+    }
+));
 app.use(express.json());
 
 app.use('/api/auth',require('./routes/auth'));
