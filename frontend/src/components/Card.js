@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import postContext from "../context/post/postContext";
 
 const Card = (props) => {
-  const obj  = (props.post);
+  const obj = props.post;
   const nav = useNavigate();
   const context = useContext(postContext);
   const { CommentPost } = context;
@@ -11,9 +11,16 @@ const Card = (props) => {
     message: "",
   });
 
+  const [backgroundImage, setBackgroundImage] = useState("");
+
+  useEffect(() => {
+    setBackgroundImage(`url(${obj.backgroundImg})`);
+  }, [obj.backgroundImg]);
+
+
   const opo = () => {
     props.setshowMod(false);
-    nav('/post')
+    nav("/post");
   };
 
   const onchange = async (e) => {
@@ -54,11 +61,9 @@ const Card = (props) => {
             </button>
           </div>
           <div
-            className={`section1 flex flex-col lg:flex-row bg-${
-              obj.backgroundImg
-                ? `[url(${obj.backgroundImg})]`
-                : '[url("https://gifdb.com/images/high/wacky-dancing-transparent-sticker-g0820fvj97em2r3a.gif")]'
-            } bg-no-repeat bg-center bg-white w-[90%] h-fit m-10 items-center space-y-5`}
+            className={`section1 flex flex-col  lg:flex-row bg-no-repeat bg-center bg-white w-[90%] h-fit items-center space-y-5`}
+            style={{backgroundImage}}
+            id="olo"
           >
             <div className="img mx-5">
               <img
@@ -77,11 +82,9 @@ const Card = (props) => {
             </div>
           </div>
 
-          <div id="pop"></div>
-
           <div className="comments mt-10 bg-[#EDEAE8] p-10 text-yellow-950">
             <p className="text-2xl">Comments : </p>
-            <div className="comment-items mx-10 space-y-3 justify-center">
+            <div className="comment-items space-y-3 justify-center">
               {props.post.comments.map((commnt) => {
                 return (
                   <div className="comment1 flex flex-row flex-wrap justify-start space-x-10">

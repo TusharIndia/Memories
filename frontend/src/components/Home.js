@@ -43,19 +43,19 @@ const Home = () => {
         Features We Have:
       </div>
       <div
-        className="h-[120vh] lg:h-[60vh] flex flex-row flex-wrap my-10 items-center justify-center overflow-visible"
+        className="h-fit sm:h-[120vh] lg:h-[60vh] flex flex-row flex-wrap my-10 items-center justify-center overflow-visible"
       >
         <div
-          className="parts flex flex-col h-[50vh] w-[40vw] lg:w-[20vw] items-center mx-4 space-y-2"
+          className="parts flex flex-col h-[70vh] sm:h-[50vh] w-[40vw] lg:w-[20vw] items-center mx-4 space-y-2"
         >
           <img
             src="https://img.freepik.com/free-photo/3d-internet-secuirty-badge_1048-18106.jpg?size=338&ext=jpg&ga=GA1.1.735520172.1709078400&semt=sph"
             className="w-[40vw] h-[33vh] lg:w-[20vw]"
             alt=""
           />
-          <div className="p-2 w-fit space-y-3 self-center h-[17vh]">
+          <div className="p-2 w-fit space-y-3 self-center h-[17vh] ">
             <h1 className="text-2xl font-semibold md:text-3xl">Secured System</h1>
-            <p className="w-[35vw] text-sm lg:w-[18vw] 2xl:text-lg h-[10vh] 2xl:h-[13vh] lg:h-[11vh]">
+            <p className="w-[35vw] text-sm lg:w-[18vw] 2xl:text-lg h-[12vh] 2xl:h-[14vh] lg:h-[12vh]">
               Passwords are stored in a manner that only the account owner can
               open it.
             </p>
@@ -63,16 +63,16 @@ const Home = () => {
           </div>
         </div>
         <div
-          className="parts flex flex-col h-[50vh] w-[40vw] lg:w-[20vw] items-center mx-4 space-y-2"
+          className="parts flex flex-col h-[70vh] sm:h-[50vh] w-[40vw] lg:w-[20vw] items-center mx-4 space-y-2"
         >
           <img
             src="https://cdn.pixabay.com/photo/2016/05/20/17/17/social-media-1405601_640.png"
             className="w-[40vw] h-[33vh] lg:w-[20vw]"
             alt=""
           />
-          <div className="p-2 w-fit space-y-3 self-center h-[17vh]">
+          <div className="p-2 w-fit space-y-3 self-center h-[17vh] ">
             <h1 className="text-2xl font-semibold md:text-3xl">Public Posts</h1>
-            <p className="w-[35vw] text-sm lg:w-[18vw] 2xl:text-lg h-[10vh] 2xl:h-[13vh] lg:h-[11vh]">
+            <p className="w-[35vw] text-sm lg:w-[18vw] 2xl:text-lg h-[14vh] 2xl:h-[14vh] lg:h-[12vh]">
               You can post the picture in any form it can be private or public
               as you want.
             </p>
@@ -81,16 +81,16 @@ const Home = () => {
           </div>
         </div>
         <div
-          className="parts flex flex-col h-[50vh] w-[40vw] lg:w-[20vw] items-center mx-4 space-y-2"
+          className="parts flex flex-col h-[70vh] sm:h-[50vh] w-[40vw] lg:w-[20vw] items-center mx-4 space-y-2"
         >
           <img
             src="https://c4.wallpaperflare.com/wallpaper/84/851/652/hands-wallpaper-preview.jpg"
             className="w-[40vw] h-[40vh] lg:w-[20vw]"
             alt=""
           />
-          <div className="p-2 w-fit space-y-3 self-center h-[17vh]">
+          <div className="p-2 w-fit space-y-3 self-center h-[17vh] ">
             <h1 className="text-2xl font-semibold md:text-3xl">Like Feature</h1>
-            <p className="w-[35vw] text-sm lg:w-[18vw] 2xl:text-lg h-[10vh] 2xl:h-[13vh] lg:h-[11vh]">
+            <p className="w-[35vw] text-sm lg:w-[18vw] 2xl:text-lg h-[14vh] 2xl:h-[14vh] lg:h-[12vh]">
               If you are logged in as a user you can like any public post or
               even like your private posts.
             </p>
@@ -98,16 +98,16 @@ const Home = () => {
           </div>
         </div>
         <div
-          className="parts flex flex-col h-[50vh] w-[40vw] lg:w-[20vw] items-center mx-4 space-y-2"
+          className="parts flex flex-col h-[70vh] sm:h-[50vh] w-[40vw] lg:w-[20vw] items-center mx-4 space-y-2"
         >
           <img
             src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Content-Card-Azure-AI-Bloom?wid=406&hei=230&fit=crop"
             className="w-[40vw] h-[40vh] lg:w-[20vw]"
             alt=""
           />
-          <div className="p-2 w-fit space-y-3 self-center h-[17vh]">
+          <div className="p-2 w-fit space-y-3 self-center h-[17vh] ">
             <h1 className="text-2xl font-semibold md:text-3xl">Comment Feature</h1>
-            <p className="w-[35vw] text-sm lg:w-[18vw] 2xl:text-lg h-[10vh] 2xl:h-[13vh] lg:h-[11vh]">
+            <p className="w-[35vw] text-sm lg:w-[18vw] 2xl:text-lg h-[14vh] 2xl:h-[14vh] lg:h-[12vh]">
               Not only you can just like the posts but also can comment on your
               posts, need to be signed in first.
             </p>

@@ -9,6 +9,7 @@ const Post = () => {
   const nav = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false); 
   const ref = useRef(null);
+  const ref2 = useRef(null);
   const [post, setPost] = useState({
     id: "",
     etitle: "",
@@ -43,7 +44,7 @@ const Post = () => {
       post.epict,
       post.ebackgroundImg
     );
-    e.preventDefault();
+    ref2.current.click();
   };
 
   const onchange = (e) => {
@@ -83,6 +84,7 @@ const Post = () => {
               </h3>
               <button
                 type="button"
+                ref={ref2}
                 onClick={() => setIsModalOpen(false)}
                 className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
                 data-modal-toggle="crud-modal"

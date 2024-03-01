@@ -36,6 +36,7 @@ const Addpost = () => {
       backgroundImg: "",
       isPublic: false
     });
+    nav('/publicpost')
   };
 
   const onchange = async(e) => {
@@ -57,19 +58,20 @@ const Addpost = () => {
       <form className="flex flex-col space-y-3 text-center my-5">
       <div className="flex flex-col"> 
         <label htmlFor="title">Title:</label>
-        <input type="text" name="title" id="title" className="hover:border-black border-2 text-center self-center w-[90vw]" onChange={onchange} value={post.title}/>
+        <input type="text" name="title" id="title" placeholder="Enter your title here" className="hover:border-black border-2 text-center self-center w-[90vw]" onChange={onchange} value={post.title}/>
       </div>
       <div className="flex flex-col"> 
         <label htmlFor="description">Description:</label>
-        <input type="text" name="description" id="description" className="hover:border-black border-2 text-center self-center w-[90vw]" onChange={onchange} value={post.description}/>
+        <input type="text" name="description" id="description" placeholder="Enter your description here" className="hover:border-black border-2 text-center self-center w-[90vw]" onChange={onchange} value={post.description}/>
       </div>
       <div className="flex flex-col"> 
         <label htmlFor="pict">Picture:</label>
-        <input type="text" name="pict" id="pict" className="hover:border-black border-2 text-center self-center w-[90vw]" onChange={onchange} value={post.pict}/>
+        <input type="text" name="pict" id="pict" placeholder="Place a cute gif URL here for pretty cards" 
+        className="hover:border-black border-2 text-center self-center w-[90vw]" onChange={onchange} value={post.pict}/>
       </div>
       <div className="flex flex-col"> 
         <label htmlFor="backgroundImg">Background Image:</label>
-        <input type="text" name="backgroundImg" className="hover:border-black border-2 text-center self-center w-[90vw]" id="backgroundImg" value={post.backgroundImg} onChange={onchange}/>
+        <input type="text" name="backgroundImg" placeholder="Enter your Background Img URL here" className="hover:border-black border-2 text-center self-center w-[90vw]" id="backgroundImg" value={post.backgroundImg} onChange={onchange}/>
       </div>
       <div className="flex flex-row justify-center space-x-6"> 
         <label htmlFor="isPublic">Public:</label>
