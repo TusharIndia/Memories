@@ -27,7 +27,7 @@ const PostSchema = new Schema({
         default: false
     },
     like: [
-        { user_id: String, username: String}
+        { user_id: {type: String, unique: true}, username: String}
     ],
     comments: [
         { body: String, username: String,date: Date }
