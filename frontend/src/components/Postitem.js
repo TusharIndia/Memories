@@ -26,8 +26,8 @@ const Postitem = (props) => {
     }
   });
 
-  const onchange = () => {
-    DeletePost(props.ppost._id);
+  const onchange = async() => {
+    await DeletePost(props.ppost._id);
   };
   const handleclk = async () => {
     let lk = await LikePost(props.ppost._id);
