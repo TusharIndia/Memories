@@ -9,11 +9,7 @@ const port = process.env.PORT;
 
 app.use(cors(
     {
-<<<<<<< HEAD
-        origin: ["https://memories-seven-livid.vercel.app","localhost:3000"],
-=======
-        origin: ["https://memories-seven-livid.vercel.app"],
->>>>>>> 69fb74ee36d16b54b0675ddb57d9b5816d3e67e6
+        origin: ["https://memories-seven-livid.vercel.app","http://localhost:3000"],
         methods: ["POST","GET"],
         credentials: true
     }
