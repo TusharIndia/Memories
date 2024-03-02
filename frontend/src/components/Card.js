@@ -1,25 +1,36 @@
 import React, { useEffect, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import postContext from "../context/post/postContext";
+import { useLocation } from "react-router-dom";
 
-const Card = (props) => {
-  const obj = props.post;
+const Card = () => {
+  const location = useLocation();
+  // console.log(location)
   const nav = useNavigate();
+  const [obj,setObj] = useState(location.state?.post);
+
+  useEffect(()=>{
+    setObj(location.state?.post); 
+    if(location.state=={}){
+      nav('/publicpost')
+    }
+  });
+
   const context = useContext(postContext);
   const { CommentPost } = context;
   const [comment, setcomment] = useState({
     message: "",
   });
 
+  const [comments,setcomments] = useState(obj.comments)
+
   const [backgroundImage, setBackgroundImage] = useState("");
 
   useEffect(() => {
-    setBackgroundImage(`url(${obj.backgroundImg})`);
-  }, [obj.backgroundImg]);
-
-
+      setBackgroundImage(`url(${obj.backgroundImg})`);
+  }, []);
+  
   const opo = () => {
-    props.setshowMod(false);
     nav("/post");
   };
 
@@ -27,20 +38,25 @@ const Card = (props) => {
     setcomment({ ...comment, [e.target.name]: e.target.value });
   };
 
-  const hndlcmmnt = async () => {
-    await CommentPost(obj._id, comment.message);
+  const hndlcmmnt = async (e) => {
+    try{
+      e.preventDefault()
+      let ab = await CommentPost(obj._id, comment.message);
+      setcomments(ab.post.comments);
+      setcomment({message: "",})
+    }catch(err){
+      console.log(err)
+    }
   };
 
   return (
     <>
       <div
-        id="myModal"
-        className="modal open fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center"
+        className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center"
       >
         <div className="modal-content overflow-auto bg-white p-6 rounded shadow-lg h-full w-full">
           <div className="flex justify-between items-center mb-4">
             <button
-              id="closeModal"
               onClick={opo}
               className="text-gray-500 hover:text-gray-700"
             >
@@ -68,7 +84,7 @@ const Card = (props) => {
             <div className="img mx-5">
               <img
                 src={obj.pict}
-                alt=""
+                alt="No pict"
                 className="sm:w-[50vw] self-center align-center"
               />
             </div>
@@ -81,11 +97,12 @@ const Card = (props) => {
               </p>
             </div>
           </div>
+          {comments && (
 
           <div className="comments mt-10 bg-[#EDEAE8] p-10 text-yellow-950">
             <p className="text-2xl">Comments : </p>
             <div className="comment-items space-y-3 justify-center">
-              {props.post.comments.map((commnt) => {
+              {comments.map((commnt) => {
                 return (
                   <div className="comment1 flex flex-row flex-wrap justify-start space-x-10">
                     <div className="username text-lg hover:underline cursor-pointer font-semibold self-center">
@@ -108,7 +125,6 @@ const Card = (props) => {
                   placeholder="Add your comment here"
                 ></textarea>
                 <button
-                  type="submit"
                   onClick={hndlcmmnt}
                   className="bg-yellow-950 text-white w-fit p-2 rounded self-center"
                 >
@@ -117,6 +133,7 @@ const Card = (props) => {
               </form>
             </div>
           </div>
+          )}
         </div>
       </div>
       {/* ):(<h1>hello</h1>)} */}

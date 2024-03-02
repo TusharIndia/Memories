@@ -70,13 +70,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center m-10 space-y-10">
-        <p className="text-4xl font-semibold">Add A Post</p>
-        <i
-          className="fa-solid fa-circle-plus fa-2xl animate-bounce hover:animate-ping"
-          onClick={handleclikc}
-        ></i>
-      </div>
+      
     </div>
   );
 };

@@ -2,20 +2,17 @@ import React, { useContext, useEffect, useState } from "react";
 import postContext from "../context/post/postContext";
 import { jwtDecode } from "jwt-decode";
 import Card from "./Card";
+import { useNavigate } from "react-router-dom";
 
 const Postitem = (props) => {
-  const { title, description, pict, like } =
-    props.ppost;
-    const [pst,setPst] = useState(props.ppost);
-    const [showMod,setshowMod] = useState(false);
-    
+  const { title, description, pict, like } = props.ppost;
+  const nav = useNavigate();
   const pop = jwtDecode(localStorage.getItem("token"));
   const context = useContext(postContext);
   const { DeletePost, LikePost } = context;
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      // console.log(pop.user.id);
       for (let index = 0; index < like.length; index++) {
         if (like[index].user_id === pop.user.id) {
           document
@@ -43,19 +40,22 @@ const Postitem = (props) => {
   };
 
   const handlexpnd = (pl) => {
-    setPst(pl);
-    setshowMod(true);
+    nav("/card",{ state: {post: pl} })
   };
 
 
   return (
     <>
-      {showMod && <Card post={pst} showMod={showMod} setshowMod={setshowMod} ></Card>}
-      <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img className="w-full" src={pict} alt="Sunset in the mountains" />
+      {/* {showMod && <Card post={pst} showMod={showMod} setshowMod={setshowMod} ></Card>} */}
+      <div className="rounded overflow-hidden shadow-lg h-[60vh] w-[20vw]">
+        <img className="w-[20vw] h-[45vh]" src={pict} alt="Sunset in the mountains" />
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{title}</div>
+          {description.length>6?(
+          <p className="text-gray-700 text-base">{description.split(' ').slice(0, 6).join(' ')}...</p>
+          ):(
           <p className="text-gray-700 text-base">{description}</p>
+          )}
         </div>
         <div className="px-6 pt-4 pb-2 flex justify-evenly">
           <i
@@ -77,8 +77,6 @@ const Postitem = (props) => {
               handlexpnd(props.ppost);
             }}
           ></i>
-          {showMod && <Card post={pst} showMod={showMod} setshowMod={setshowMod}></Card>}
-
           <i
             className="fa-solid fa-trash mx-2 cursor-pointer"
             onClick={onchange}

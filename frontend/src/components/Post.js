@@ -51,10 +51,13 @@ const Post = () => {
     setPost({ ...post, [e.target.name]: e.target.value });
   };
 
+  const handleclikc = () => {
+    nav("/addpost");
+  };
+
   useEffect(() => {
     if(localStorage.getItem('token')){
       Getpost();
-      // console.log(posts)
     }else{
       nav('/login')
     }
@@ -210,7 +213,7 @@ const Post = () => {
       </div>)}
 
       <div>
-        <div className="flex flex-col items-center my-5 space-y-3">
+        <div className="flex flex-col items-center my-5 space-y-3 mb-20">
           <h2 className="md:text-6xl text-center text-3xl">
             All Posts Related to User
           </h2>
@@ -231,6 +234,12 @@ const Post = () => {
             </div>
           </div>
         </div>
+          <div className="flex flex-col justify-center items-center m-10 space-y-10">
+            <i
+              className="fa-solid fa-circle-plus fa-2xl animate-bounce hover:animate-ping"
+              onClick={handleclikc}
+            ></i>
+          </div>
       </div>
 
 
