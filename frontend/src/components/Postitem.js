@@ -48,7 +48,7 @@ const Postitem = (props) => {
     <>
       {/* {showMod && <Card post={pst} showMod={showMod} setshowMod={setshowMod} ></Card>} */}
       <div className="rounded overflow-hidden shadow-lg h-[60vh] w-[20vw]">
-        <img className="w-[20vw] h-[45vh]" src={pict} alt="Sunset in the mountains" />
+        <img className="w-[20vw] h-[35vh]" src={pict} alt="Sunset in the mountains" />
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">{title}</div>
           {description.length>6?(
