@@ -7,11 +7,11 @@ const Card = () => {
   const location = useLocation();
   // console.log(location)
   const nav = useNavigate();
+  console.log(location.state)
   const [obj,setObj] = useState(location.state?.post);
 
   useEffect(()=>{
-    setObj(location.state?.post); 
-    if(location.state=={}){
+    if(location.state.post=={}){
       nav('/publicpost')
     }
   });

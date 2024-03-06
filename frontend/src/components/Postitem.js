@@ -47,12 +47,12 @@ const Postitem = (props) => {
   return (
     <>
       {/* {showMod && <Card post={pst} showMod={showMod} setshowMod={setshowMod} ></Card>} */}
-      <div className="rounded overflow-hidden shadow-lg h-[60vh] w-[20vw]">
-        <img className="w-[20vw] h-[35vh]" src={pict} alt="Sunset in the mountains" />
+      <div className="rounded overflow-hidden shadow-lg h-[60vh] md:w-[25vw] w-[50vw]">
+        <img className="w-[50vw] md:w-[25vw] h-[40vh]" src={pict} alt="Sunset in the mountains" />
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{title}</div>
+          <div className="font-bold text-xl mb-2">{title.substring(0,5)}</div>
           {description.length>6?(
-          <p className="text-gray-700 text-base">{description.split(' ').slice(0, 6).join(' ')}...</p>
+          <p className="text-gray-700 text-base">{description.substring(0, 6)}...</p>
           ):(
           <p className="text-gray-700 text-base">{description}</p>
           )}
